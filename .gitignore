@@ -2,6 +2,7 @@
 build
 dist
 files
+uploads
 #files 
 app.exe
 app.spec
@@ -10,4 +11,5 @@ following.html
 followers_1.json
 following.json
 test.py
+the token.txt
 __pycache__/
