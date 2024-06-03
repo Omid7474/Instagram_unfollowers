@@ -1,0 +1,9 @@
+#folders
+build
+dist
+files
+#files 
+app.exe
+app.spec
+followers_1.html
+following.html

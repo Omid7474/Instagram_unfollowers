@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Instagram Unfollower</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #fafafa;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            color: #333333;
+        }
+        .container {
+            margin-top: 50px;
+        }
+        .user-link {
+            color: #003569; /* Dark blue color for links */
+            text-decoration: none; /* Remove default underline */
+            font-weight: bold; /* Bold font weight */
+        }
+        .user-link:hover {
+            text-decoration: underline; /* Add underline on hover */
+        }
+        .header {
+            background-color: #fd79a8; /* Insta pink color for header */
+            color: #ffffff; /* White text color */
+            padding: 20px; /* Add padding for spacing */
+            margin-bottom: 30px; /* Add margin to separate from content */
+            font-size: 24px; /* Larger font size for header */
+            font-weight: bold; /* Bold font weight for header */
+        }
+        .table {
+            border-collapse: collapse; /* Collapse table borders */
+            width: 100%; /* Set table width to fill container */
+        }
+        .table th, .table td {
+            border: 1px solid #dddddd; /* Add border to table cells */
+            padding: 8px; /* Add padding for spacing */
+            text-align: left; /* Align text to left */
+        }
+        .circle {
+            display: inline-block; /* Make circle a block element */
+            width: 30px; /* Set width of circle */
+            height: 30px; /* Set height of circle */
+            background-color: #C5CAE9; /* Light blue color for circle */
+            border-radius: 50%; /* Make circle shape */
+            line-height: 30px; /* Center number vertically */
+            text-align: center; /* Center number horizontally */
+            margin-right: 10px; /* Add margin for spacing between circle and text */
+            font-size: 16px; /* Font size of number */
+            font-weight: bold; /* Bold font weight for number */
+        }
+        .copyright {
+            margin-top: 50px; /* Add margin to separate from content */
+            text-align: center; /* Align text to center */
+            color: #999999; /* Light gray color for copyright text */
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1 class="header mb-4">People you are following but not following you back:</h1>
+    <table class="table">
+        <tbody>
+            {% for i, (user, url) in enumerate(data, start=1) %}
+                {% if loop.index % 4 == 1 %}
+                    <tr> <!-- Start new row every 4 links -->
+                {% endif %}
+                <td><span class="circle">{{ i }}</span><a href="{{ url }}" class="user-link" target="_blank" onclick="changeColor(this)">{{ user }}</a></td>
+                {% if loop.index % 4 == 0 or loop.last %}
+                    </tr> <!-- End row every 4 links or last link -->
+                {% endif %}
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+
+<div class="copyright">
+    <p>No Copyright © Omid Davoudnia</p>
+</div>
+
+<script>
+    function changeColor(link) {
+        link.style.color = '#ff0000'; /* Change text color to red */
+    }
+</script>
+
+</body>
+</html>
