@@ -32,4 +32,4 @@ To obtain your `followers_1.json` and `following.json` files, follow these steps
 
 ---
 
-[Find me on LinkedIn](www.linkedin.com/in/omid-davoudnia-8b071a236)
+[Find me on LinkedIn](https://www.linkedin.com/in/omid-davoudnia-8b071a236)
